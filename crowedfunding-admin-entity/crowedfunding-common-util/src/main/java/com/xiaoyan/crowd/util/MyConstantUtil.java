@@ -12,7 +12,7 @@ public class MyConstantUtil {
     public static final String ATTR_NAME_LOGIN_MEMBER = "member";
     public static final String ATTR_NAME_PAGE_INFO = "pageInfo";
     public static final String ATTR_NAME_MESSAGE = "message";
-
+    public static final String GIT_TEST_MASTER = "git_test_master";
 
     public static final String MESSAGE_NOT_LOGIN = "请先登录！！！";
     public static final String MESSAGE_LOGIN_FAILED = "登录失败！请确认账号或密码是否正确！";
