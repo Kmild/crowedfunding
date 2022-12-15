@@ -1,0 +1,24 @@
+server:
+  port: 2000
+spring:
+  application:
+    name: atxiaoyan-crowd-mysql
+  #配置数据源信息
+  datasource:
+    #配置数据源类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    #配置连接数据库的各个信息
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/project_crowd?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 201314
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+mybatis:
+  mapper-locations: classpath*:/mybatis/mapper/*Mapper.xml
+logging:
+  level:
+    com.xiaoyan.crowd.mapper: debug
+    com.xiaoyan.crowd.test: debug

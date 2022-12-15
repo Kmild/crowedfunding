@@ -1,0 +1,20 @@
+server:
+  port: 4000
+spring:
+  application:
+    name: atxiaoyan-crowd-auth
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+    host: 192.168.163.140
+    password: 201314
+    session:
+      store-type: redis
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka/
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000

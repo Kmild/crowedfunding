@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--    开启自动扫描-->
+    <context:component-scan base-package="com.xiaoyan.crowd.mvc"></context:component-scan>
+
+    <!--    开启注解驱动-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"> <!-- 前缀：附加到逻辑视图名称前 -->
+        <property name="prefix" value="/WEB-INF/template/"/> <!-- 后缀：附加到逻辑视图名称后 -->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+<!--    异常捕获介绍：
+ 在springMvc中，一个请求如果是由mvc:view-controller处理的，在这过程中如果抛出了异常，
+那么就得用基于xml的异常映射来捕获处理这个异常。如果请求是有@RequestMapping这个注解来处理的，
+在这过程中发生了异常，那么就得使用基于注解的异常映射来捕获并处理这个异常。-->
+
+<!--    配置基于xml方式的异常映射-->
+    <bean  id="simpleMappingExceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+<!--        配置异常类型和具体页面视图的映射关系-->
+        <property name="exceptionMappings">
+            <props>
+<!--                key:异常全类名
+                      标签中写对应的 视图 -->
+                <prop key="java.lang.NullPointerException">system-error</prop>
+            </props>
+        </property>
+
+    </bean>
+
+<!--    跳转至登陆页-->
+
+    <mvc:view-controller path="/admin/to/login.html" view-name="admin-login"></mvc:view-controller>
+<!--    跳转至管理员界面-->
+    <mvc:view-controller path="/admin/to/admin-main.html" view-name="admin-main"></mvc:view-controller>
+<!--     跳转至新增页面-->
+    <mvc:view-controller path="/admin/to/admin-add.html" view-name="admin-add"></mvc:view-controller>
+
+<!--    跳转至 role-page 页面-->
+    <mvc:view-controller path="/role/to/page.html" view-name="role-page"></mvc:view-controller>
+
+<!--    跳转至 menu-page 页面-->
+    <mvc:view-controller path="/menu/to/page.html" view-name="menu-page"></mvc:view-controller>
+
+<!--&lt;!&ndash;    注册登录拦截器   springSecurity代替&ndash;&gt;-->
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--&lt;!&ndash;            配置需要拦截的资源&ndash;&gt;-->
+<!--            <mvc:mapping path="/**"/>-->
+<!--            <mvc:exclude-mapping path="/admin/to/login.html"/>-->
+<!--            <mvc:exclude-mapping path="/admin/do/login.html"/>-->
+<!--            <mvc:exclude-mapping path="/admin/to/admin-main.html"/>-->
+<!--&lt;!&ndash;            注册拦截器&ndash;&gt;-->
+<!--            <bean class="com.xiaoyan.crowd.mvc.interceptor.LoginInterceptor"></bean>-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
+
+
+</beans>

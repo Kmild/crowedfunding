@@ -1,0 +1,28 @@
+server:
+  port: 80
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka/
+spring:
+  application:
+    name: atxiaoyan-crowd-zuul
+  redis:
+    host: 192.168.163.140
+    password: 201314
+  session:
+    store-type: redis
+
+zuul:
+  ignored-services: "*"
+  sensitive-headers: "*"  # 对头敏感：在zuul向其他微服务重定向时保持原本头信息（请求头、消息头），默认重定向时是重新构建request和response
+  routes:
+    crowd-portal:
+      service-id: atxiaoyan-crowd-auth
+      path: /**
+    crowd-project:
+      service-id: atxiaoyan-crowd-project
+      path: /project/**
+    crowd-order:
+      service-id: atxiaoyan-crowd-order
+      path: /order/**

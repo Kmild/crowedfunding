@@ -1,0 +1,13 @@
+server:
+  port: 3000
+spring:
+  application:
+    name: atxiaoyan-crowd-redis
+  redis:
+    host: 192.168.163.138
+    password: 201314
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
