@@ -27,7 +27,7 @@ public class MyConstantUtil {
     public static final String REDIS_CODE_PREFIX = "REDIS_CODE_PREFIX_";
     public static final String MESSAGE_SYSTEM_ERROR_REDIS_GET_FAILED = "系统错误！获取数据失败！";
     public static final String ATTR_NAME_TEMPLE_PROJECT = "project";
-    public static final String MESSAGE_HEADER_PIC_EMPTY = "请上传头图！";
+    public static final String MESSAGE_HEADER_PIC_EMPTY = "请上传头图aaaaa！";
     public static final String MESSAGE_HEADER_PIC_UPLOAD_FAILED = "头图上传失败！";
     public static final String MESSAGE_DETAIL_PIC_EMPTY = "详细图片不能为空！";
     public static final String MESSAGE_DETAIL_PIC_UPLOAD_FAILED = "详细ddd图片上传失败!!!！";
