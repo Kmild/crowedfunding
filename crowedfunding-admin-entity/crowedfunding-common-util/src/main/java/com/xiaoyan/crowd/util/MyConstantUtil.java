@@ -30,5 +30,5 @@ public class MyConstantUtil {
     public static final String MESSAGE_HEADER_PIC_EMPTY = "请上传头图！";
     public static final String MESSAGE_HEADER_PIC_UPLOAD_FAILED = "头图上传失败！";
     public static final String MESSAGE_DETAIL_PIC_EMPTY = "详细图片不能为空！";
-    public static final String MESSAGE_DETAIL_PIC_UPLOAD_FAILED = "详细图片上传失败！";
+    public static final String MESSAGE_DETAIL_PIC_UPLOAD_FAILED = "详细ddd图片上传失败!!!！";
 }
